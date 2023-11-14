@@ -8,14 +8,141 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Control",
+"class": "ChildAdder",
+"language": "GDScript",
+"path": "res://Addons/ExtraGui/ChildAdder.gd"
+}, {
+"base": "Control",
+"class": "Draggable",
+"language": "GDScript",
+"path": "res://Addons/ExtraGui/Draggable.gd"
+}, {
+"base": "",
+"class": "GitAPI",
+"language": "NativeScript",
+"path": "res://Addons/godot-git-plugin/git_api.gdns"
+}, {
+"base": "Node",
+"class": "GuiTransition",
+"language": "GDScript",
+"path": "res://Addons/simple-gui-transitions/transition.gd"
+}, {
+"base": "Control",
+"class": "RemotHide",
+"language": "GDScript",
+"path": "res://Addons/ExtraGui/RemoteHide.gd"
+}, {
+"base": "Node",
+"class": "Renameable",
+"language": "GDScript",
+"path": "res://Addons/ExtraGui/Renameable.gd"
+}, {
+"base": "Node",
+"class": "SaveController",
+"language": "GDScript",
+"path": "res://Addons/ExtraGui/SaveController.gd"
+}, {
+"base": "Node",
+"class": "Saveable",
+"language": "GDScript",
+"path": "res://Addons/ExtraGui/Saveable.gd"
+}, {
+"base": "Control",
+"class": "Scrollable",
+"language": "GDScript",
+"path": "res://Addons/ExtraGui/Scrollable.gd"
+}, {
+"base": "Control",
+"class": "SelectBox",
+"language": "GDScript",
+"path": "res://Addons/ExtraGui/SelectBox.gd"
+}, {
+"base": "Control",
+"class": "Selectable",
+"language": "GDScript",
+"path": "res://Addons/ExtraGui/Selectable.gd"
+}, {
+"base": "Node",
+"class": "SelectionController",
+"language": "GDScript",
+"path": "res://Addons/ExtraGui/SelectionController.gd"
+}, {
+"base": "Control",
+"class": "TabController",
+"language": "GDScript",
+"path": "res://Addons/ExtraGui/TabController.gd"
+}, {
+"base": "Button",
+"class": "TabgroupButton",
+"language": "GDScript",
+"path": "res://Addons/ExtraGui/TabgroupButton.gd"
+}, {
+"base": "Button",
+"class": "ToggleVisible",
+"language": "GDScript",
+"path": "res://Addons/ExtraGui/ToggleVisible.gd"
+}, {
+"base": "Control",
+"class": "Undoable",
+"language": "GDScript",
+"path": "res://Addons/ExtraGui/Undoable.gd"
+} ]
+_global_script_class_icons={
+"ChildAdder": "res://Addons/ExtraGui/add_icon.png",
+"Draggable": "res://Addons/ExtraGui/move_icon.png",
+"GitAPI": "",
+"GuiTransition": "res://addons/simple-gui-transitions/icon.png",
+"RemotHide": "res://Addons/ExtraGui/eye_icon.png",
+"Renameable": "res://Addons/ExtraGui/edit_icon.png",
+"SaveController": "res://Addons/ExtraGui/save_icon.png",
+"Saveable": "res://Addons/ExtraGui/save_icon.png",
+"Scrollable": "res://Addons/ExtraGui/move_icon.png",
+"SelectBox": "res://Addons/ExtraGui/select_icon.png",
+"Selectable": "res://Addons/ExtraGui/select_icon.png",
+"SelectionController": "res://Addons/ExtraGui/select_icon.png",
+"TabController": "res://Addons/ExtraGui/tab_icon.png",
+"TabgroupButton": "res://Addons/ExtraGui/tab_icon.png",
+"ToggleVisible": "res://Addons/ExtraGui/eye_icon.png",
+"Undoable": "res://Addons/ExtraGui/undo_icon.png"
+}
+
 [application]
 
 config/name="Satisfactory Planner"
+run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://Assets/icon.png"
+
+[autoload]
+
+egs="*res://addons/ExtraGui/extraGuiSingleton.gd"
+GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
+
+[editor]
+
+version_control_autoload_on_startup=true
+version_control_plugin_name="GitAPI"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/ExtraGui/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg" )
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[gui_transitions]
+
+config/default/auto_start=true
+config/default/fade_layout=true
+config/default/center_pivot=true
+config/default/duration=0.5
+config/default/delay=0.5
+config/default/transition_type="QUAD"
+config/default/ease_type="IN_OUT"
+config/default/animation_enter=4
+config/default/animation_leave=4
 
 [physics]
 
