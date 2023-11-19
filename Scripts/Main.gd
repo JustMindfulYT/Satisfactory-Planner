@@ -1,80 +1,47 @@
 extends Control
 
-onready var mouseHoverPlayer = $MouseHoverPlayer
-onready var mouseReleasePlayer = $MouseReleasePlayer
-onready var mouseClickPlayer = $MouseClickPlayer
-
-
-onready var settingsButton = $SettingsButton
-onready var creditsButton = $CreditsButton
-onready var quitButton = $QuitButton
-
-onready var quitLabel = $QuitLabel
-onready var cancelQuitButton = $CancelQuitButton
-onready var confirmQuitButton = $ConfirmQuitButton
 
 func _ready():
-	settingsButton.connect("mouse_entered", self, "mouseHover")
-	settingsButton.connect("mouse_exited", self, "mouseRelease")
-	settingsButton.connect("button_down", self, "mouseClick")
-	settingsButton.connect("button_up", self, "show_settings")
+	_on_CancelQuitButton_button_up()
+
+func funcErr(funcName : String):
+	push_error("Function '" + funcName + "' not implemented")
+	printerr("Function '" + funcName + "' not implemented")
+
+func _on_PlayButton_button_up():
+	funcErr("_on_PlayButton_button_up()")
+
+
+func _on_SettingsButton_button_up():
+# warning-ignore:return_value_discarded
+	get_tree().change_scene("res://Scenes/Settings.tscn")
+
+
+func _on_CreditsButton_button_up():
+	funcErr("_on_CreditsButton_button_up()")
+
+
+func _on_QuitButton_button_up():
+	$PlayButton.hide()
+	$CreditsButton.hide()
+	$SettingsButton.hide()
+	$QuitButton.hide()
 	
-	creditsButton.connect("mouse_entered", self, "mouseHover")
-	creditsButton.connect("mouse_exited", self, "mouseRelease")
-	creditsButton.connect("button_down", self, "mouseClick")
-	creditsButton.connect("button_up", self, "show_credits")
+	$QuitLabel.show()
+	$CancelQuitButton.show()
+	$ConfirmQuitButton.show()
+
+
+func _on_CancelQuitButton_button_up():
+	$PlayButton.show()
+	$CreditsButton.show()
+	$SettingsButton.show()
+	$QuitButton.show()
 	
-	quitButton.connect("mouse_entered", self, "mouseHover")
-	quitButton.connect("mouse_exited", self, "mouseRelease")
-	quitButton.connect("button_down", self, "mouseClick")
-	quitButton.connect("button_up", self, "show_quit")
-	
-	cancelQuitButton.connect("mouse_entered", self, "mouseHover")
-	cancelQuitButton.connect("mouse_exited", self, "mouseRelease")
-	cancelQuitButton.connect("button_down", self, "mouseClick")
-	cancelQuitButton.connect("button_up", self, "cancel_quit")
-	
-	confirmQuitButton.connect("mouse_entered", self, "mouseHover")
-	confirmQuitButton.connect("mouse_exited", self, "mouseRelease")
-	confirmQuitButton.connect("button_down", self, "mouseClick")
-	confirmQuitButton.connect("button_up", self, "confirm_quit")
-	
-	cancel_quit()
+	$QuitLabel.hide()
+	$CancelQuitButton.hide()
+	$ConfirmQuitButton.hide()
 
 
-func mouseHover():
-	mouseHoverPlayer.play()
-
-func mouseRelease():
-	mouseReleasePlayer.play()
-
-func mouseClick():
-	mouseClickPlayer.play()
-
-
-func show_credits():
-	pass
-
-func show_settings():
-	pass
-
-func show_quit():
-	creditsButton.hide()
-	settingsButton.hide()
-	quitButton.hide()
-	
-	quitLabel.show()
-	cancelQuitButton.show()
-	confirmQuitButton.show()
-
-func cancel_quit():
-	creditsButton.show()
-	settingsButton.show()
-	quitButton.show()
-	
-	quitLabel.hide()
-	cancelQuitButton.hide()
-	confirmQuitButton.hide()
-
-func confirm_quit():
+func _on_ConfirmQuitButton_button_up():
 	get_tree().quit()
