@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Fonts/regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Fonts/Title.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Scripts/Main.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Old.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Button.tscn" type="PackedScene" id=7]
 
 [sub_resource type="StyleBoxFlat" id=12]

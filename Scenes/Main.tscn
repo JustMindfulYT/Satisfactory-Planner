@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Icons/TripleBar.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/Title.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Assets/Icons/ImportFail.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.188235, 0.188235, 0.188235, 1 )
@@ -31,8 +31,9 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=5]
-resource_name = "Sidebar"
+resource_name = "SidebarExtend"
 length = 0.2
+step = 0.02
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_size")
 tracks/0/interp = 1
@@ -46,12 +47,13 @@ tracks/0/keys = {
 "values": [ Vector2( 40, 600 ), Vector2( 200, 600 ) ]
 }
 
-[sub_resource type="StyleBoxEmpty" id=3]
+[sub_resource type="StyleBoxEmpty" id=6]
 
 [node name="Root" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -344, 184 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -82,9 +84,9 @@ margin_right = 0.0639992
 rect_min_size = Vector2( 40, 0 )
 custom_styles/panel = SubResource( 2 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PanelContainer"]
+[node name="PanelAnimation" type="AnimationPlayer" parent="PanelContainer"]
 anims/RESET = SubResource( 4 )
-anims/Sidebar = SubResource( 5 )
+anims/SidebarExtend = SubResource( 5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 margin_top = 2.0
@@ -94,24 +96,17 @@ margin_bottom = 600.0
 [node name="SidebarToggleButton" type="Button" parent="PanelContainer/VBoxContainer"]
 margin_right = 38.0
 margin_bottom = 30.0
-rect_min_size = Vector2( 38, 30 )
-custom_styles/focus = SubResource( 3 )
+rect_min_size = Vector2( 0, 30 )
+custom_styles/focus = SubResource( 6 )
 text = "Toggle Sidebar"
 icon = ExtResource( 1 )
 flat = true
 clip_text = true
-align = 0
 expand_icon = true
 
-[node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 margin_top = 34.0
 margin_right = 38.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 38, 30 )
-custom_styles/focus = SubResource( 3 )
-text = "Close Application"
-icon = ExtResource( 3 )
-flat = true
-clip_text = true
-align = 0
-expand_icon = true
+margin_bottom = 38.0
+
+[connection signal="button_up" from="PanelContainer/VBoxContainer/SidebarToggleButton" to="." method="_on_SidebarToggleButton_button_up"]
