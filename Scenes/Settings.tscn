@@ -111,9 +111,10 @@ margin_right = 919.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 550, 30 )
 min_value = -80.0
-max_value = 5.0
-step = 5.0
-tick_count = 18
+max_value = 6.0
+step = 2.0
+value = -80.0
+tick_count = 44
 ticks_on_borders = true
 
 [node name="AudioUiVolume" type="HBoxContainer" parent="SettingsContainer/SettingsBox"]
@@ -143,9 +144,10 @@ margin_right = 919.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 550, 30 )
 min_value = -80.0
-max_value = 5.0
-step = 5.0
-tick_count = 18
+max_value = 6.0
+step = 2.0
+value = -80.0
+tick_count = 44
 ticks_on_borders = true
 
 [node name="AudioMusicVolume" type="HBoxContainer" parent="SettingsContainer/SettingsBox"]
@@ -176,9 +178,10 @@ margin_right = 919.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 550, 30 )
 min_value = -80.0
-max_value = 5.0
-step = 5.0
-tick_count = 18
+max_value = 6.0
+step = 2.0
+value = -80.0
+tick_count = 44
 ticks_on_borders = true
 
 [connection signal="button_up" from="CloseButton" to="." method="_on_CloseButton_button_up"]

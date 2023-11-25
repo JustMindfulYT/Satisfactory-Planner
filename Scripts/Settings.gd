@@ -1,9 +1,12 @@
 extends Control
 
-
 func _on_CloseButton_button_up():
+	save_settings()
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Scenes/Main.tscn")
+
+func save_settings():
+	assert(false, "'save_settings' is not implemented yet")
 
 func _ready():
 	set_audio_settings()

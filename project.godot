@@ -184,6 +184,7 @@ config/icon="res://Assets/icon.png"
 
 egs="*res://addons/ExtraGui/extraGuiSingleton.gd"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
+Global="*res://Scripts/Global.gd"
 
 [editor]
 
@@ -192,7 +193,7 @@ version_control_plugin_name="GitAPI"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/ActionIcon/plugin.cfg", "res://addons/ExtraGui/plugin.cfg", "res://addons/editor_icon_exporter/plugin.cfg", "res://addons/editor_icon_previewer/plugin.cfg", "res://addons/explore-editor-theme/plugin.cfg", "res://addons/godot_editor_discord_presence/plugin.cfg", "res://addons/godot_icon/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/ActionIcon/plugin.cfg", "res://addons/ExtraGui/plugin.cfg", "res://addons/explore-editor-theme/plugin.cfg", "res://addons/godot_editor_discord_presence/plugin.cfg", "res://addons/godot_icon/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg" )
 
 [gui]
 
