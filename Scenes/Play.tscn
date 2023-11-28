@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Fonts/Title.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/Play.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Button.tscn" type="PackedScene" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.188235, 0.188235, 0.188235, 1 )
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Title" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.107
+margin_bottom = -0.200005
+custom_colors/default_color = Color( 0.913725, 0.419608, 0.419608, 1 )
+custom_fonts/mono_font = ExtResource( 1 )
+custom_fonts/bold_italics_font = ExtResource( 1 )
+custom_fonts/italics_font = ExtResource( 1 )
+custom_fonts/bold_font = ExtResource( 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+custom_styles/normal = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Project Selection[center]"
+text = "Project Selection"
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AddButton" parent="." instance=ExtResource( 3 )]
+anchor_top = 0.213
+anchor_bottom = 0.28
+margin_top = 0.199989
+margin_bottom = 0.0
+text = "Add"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="OpenButton" parent="." instance=ExtResource( 3 )]
+anchor_top = 0.32
+anchor_bottom = 0.387
+margin_top = -1.52588e-05
+margin_bottom = -0.200012
+text = "Open"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CancelButton" parent="." instance=ExtResource( 3 )]
+anchor_top = 0.427
+anchor_bottom = 0.493
+margin_top = -0.200012
+margin_bottom = 0.199982
+text = "Cancel"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ItemList" type="ItemList" parent="."]
+anchor_left = 0.187
+anchor_top = 0.213
+anchor_right = 0.977
+anchor_bottom = 0.96
+margin_left = 0.511993
+margin_top = 0.199989
+margin_right = -0.448059
+
+[connection signal="button_up" from="AddButton" to="." method="_on_AddButton_button_up"]
+[connection signal="button_up" from="OpenButton" to="." method="_on_OpenButton_button_up"]
+[connection signal="button_up" from="CancelButton" to="." method="_on_CancelButton_button_up"]

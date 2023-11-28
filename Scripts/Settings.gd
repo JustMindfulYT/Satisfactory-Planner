@@ -6,7 +6,7 @@ func _on_CloseButton_button_up():
 	get_tree().change_scene("res://Scenes/Main.tscn")
 
 func save_settings():
-	assert(false, "'save_settings' is not implemented yet")
+	printerr("'save_settings' is not implemented yet!")
 
 func _ready():
 	set_audio_settings()
