@@ -1,0 +1,122 @@
+{
+	"info": {
+		"name": "Template Project",
+		"creator": "Mindful Studios"
+	},
+	"production_lines": {
+		"iron": {
+			"name": "Iron Factory",
+			"resources": {
+				"iron_ore": 600
+			},
+			"input": {
+				"iron_ore": 600
+			}
+			"output": {
+				"iron_plate": 240,
+				"iron_rod": 240
+			}
+			"power": {
+				"total": 192,
+				"buildings": {
+					"constructor": {
+						"times": 28,
+						"consumption": 112,
+						"recipes": {
+							"iron_plate": {
+								"times": 12,
+								"consumption": 48
+							}
+							"iron_rod": {
+								"times": 16,
+								"consumption": 64
+							}
+						}
+					}
+					"smelter": {
+						"times": 20,
+						"consumption": 80,
+						"recipes": {
+							"iron_ingot": {
+								"times": 20,
+								"consumption": 80
+							}
+						}
+					}
+				}
+			}
+			"items": {
+				"iron_ore": {
+					"production": {
+						"ips": 600,
+						"items": {
+							"raw_resource": 600
+						}
+					}
+					"consumption": {
+						"ips": 600,
+						"items": {
+							"iron_ingot": 600
+						}
+					}
+					},
+				"iron_ingot": {
+					"production": {
+						"ips": 600,
+						"items": {
+							"iron_ingot": 600
+						}
+					}
+					"consumption": {
+						"ips": 600,
+						"items": {
+							"iron_plate": 360,
+							"iron_rod": 240
+						}
+					}
+				},
+				"iron_plate": {
+					"production": {
+						"ips": 240,
+						"items": {
+							"iron_plate": 240
+						}
+					}
+					"consumption": {
+						"ips": 0,
+						"items": {}
+					}
+				},
+				"iron_prod": {
+					"production": {
+						"ips": 240,
+						"items": {
+							"iron_rod": 240
+						}
+					}
+					"consumption": {
+						"ips": 0,
+						"items": {}
+					}
+				}
+				},
+			"buildings": {
+				"constructor": {
+					"times": 28,
+					"cost": {
+						"reinforced_iron_plate": 56,
+						"copper_cable": 224
+					}
+				},
+				"smelter": {
+					"times": 20,
+					"cost": {
+						"iron_rods": 100,
+						"copper_wire": 160
+					}
+				}
+			}
+			}
+		}
+	}
+}
