@@ -205,7 +205,7 @@ version_control_plugin_name="GitAPI"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/ActionIcon/plugin.cfg", "res://addons/ExtraGui/plugin.cfg", "res://addons/docs_checklist/plugin.cfg", "res://addons/epic-anchors/plugin.cfg", "res://addons/explore-editor-theme/plugin.cfg", "res://addons/godot_editor_discord_presence/plugin.cfg", "res://addons/godot_icon/plugin.cfg", "res://addons/katuiche-colorful-console/plugin.cfg", "res://addons/scrolllistcontainer/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/ExtraGui/plugin.cfg", "res://addons/docs_checklist/plugin.cfg", "res://addons/epic-anchors/plugin.cfg", "res://addons/explore-editor-theme/plugin.cfg", "res://addons/godot_editor_discord_presence/plugin.cfg", "res://addons/godot_icon/plugin.cfg", "res://addons/katuiche-colorful-console/plugin.cfg", "res://addons/scrolllistcontainer/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg" )
 
 [gui]
 
